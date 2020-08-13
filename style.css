@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 00;
+}
+body{
+    padding: 10rem;
+}
+html{
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+.text{
+    font-size: 2rem;
+}
+.begin{
+    border: 1px solid black;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    border-radius: 5px;
+    color: rgb(8, 103, 228);
+    padding: 3px;
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    cursor: pointer;
+
+}
+.quiz_div{
+    border: black 1px solid;
+    width: 70%;
+    margin: 5rem auto;
+    padding: 3rem;
+    display: none;
+    background-color: rgb(255, 255, 236);
+}
+.ques_num{
+    width: 7%;
+}
+.question_div{
+    display: flex;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.secim_div{
+   display: flex;
+    font-size: 1.7rem;
+    margin: 1.5rem;
+    cursor: pointer;
+}
+.variant,.ques_num{
+    margin-right: 1rem;
+}
+.variant{
+    padding: 2px;
+    border-radius: 50%;
+}
+.secim{
+    border-radius: 3px;
+    width: 60%;
+}
+#bal{
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    font-size: 2.5rem;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgb(47, 130, 255);
+}
+#module{
+   display: none;
+  width: 50%;
+  margin: auto;
+  font-size: 2rem;
+  padding: 5rem;
+  height: 200px;
+  text-align: center;
+  background-color: rgb(234, 238, 0);
+}
+.close{
+    float: right;
+    cursor: pointer;
+}
+.netice{
+    font-size: 3rem;
+    font-weight: 600;
+}
