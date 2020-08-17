@@ -7,48 +7,48 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    
-
-   <p class="text">Duzgun cavab bali 10 yalnish cavab bali -2 dir.
+    <p class="text">Duzgun cavab bali 10 yalnish cavab bali -2 dir.
         Imtahani ugurla kecmeyiniz ucun 40 bal toplamalisiniz. <br>
         Imtahana ayrilmish vaxt 120 san
     </p>
 
     <div class="begin">Imtahana bashla</div>
-    <div class="quiz_div" >
-        <div class="question_div" >
-            <span class="ques_num"></span>
-            <p class="ques"> </p>
+    <div class="quiz_div">
+         <!-- show question-->
+        <div class="question_div"> 
+            <span class="question_number"></span>
+            <p class="question"> </p>
         </div>
-        
-        <div class="variants">
-            <div class="secim_div">
-                <span class="variant" >A) </span>
-                <p class="a secim" id="1" > </p>
+        <!-- show corecct and wrong answer -->
+        <div class="All_Options_dives">
+            <div class="option_div">
+                <span class="variant">A) </span>
+                <p class="a option" id="1"> </p>
             </div>
-            <div class="secim_div">
-                <span class="variant" >B) </span>
-                <p class="b secim" id="2" ></p>
+            <div class="option_div">
+                <span class="variant">B) </span>
+                <p class="b option" id="2"></p>
             </div>
-            <div class="secim_div">
-                <span class="variant" >C) </span>
-                <p class="c secim" id="3" ></p>
+            <div class="option_div">
+                <span class="variant">C) </span>
+                <p class="c option" id="3"></p>
             </div>
-            <div class="secim_div">
-                <span class="variant" >D) </span>
-                <p class="d secim" id="4" ></p>
+            <div class="option_div">
+                <span class="variant">D) </span>
+                <p class="d option" id="4"></p>
             </div>
         </div>
     </div>
 
-    <div id="module">
+    <!--show exam result-->
+    <div id="result_module">
         <span class="close">x</span>
         Topladigniz bal.
-        <div id="bal"></div>
-        <p class="netice">Kesildinz</p>
+        <div id="point"></div>
+        <p class="result"></p>
     </div>
+
 
 
     <script src="app.js"></script>

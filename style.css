@@ -25,7 +25,6 @@ html{
     margin-top: 5rem;
     margin-bottom: 5rem;
     cursor: pointer;
-
 }
 .quiz_div{
     border: black 1px solid;
@@ -35,7 +34,7 @@ html{
     display: none;
     background-color: rgb(255, 255, 236);
 }
-.ques_num{
+.question_number{
     width: 7%;
 }
 .question_div{
@@ -43,25 +42,24 @@ html{
     font-size: 2rem;
     font-weight: 600;
 }
-
-.secim_div{
-   display: flex;
+.option_div{
+    display: flex;
     font-size: 1.7rem;
     margin: 1.5rem;
     cursor: pointer;
 }
-.variant,.ques_num{
+.All_Options_dives,.ques_num{
     margin-right: 1rem;
 }
-.variant{
+.All_Options_dives{
     padding: 2px;
     border-radius: 50%;
 }
-.secim{
+.option{
     border-radius: 3px;
     width: 60%;
 }
-#bal{
+#point{
     width: 20%;
     text-align: center;
     margin: auto;
@@ -73,7 +71,7 @@ html{
     margin-bottom: 2rem;
     background-color: rgb(47, 130, 255);
 }
-#module{
+#result_module{
    display: none;
   width: 50%;
   margin: auto;
@@ -87,7 +85,7 @@ html{
     float: right;
     cursor: pointer;
 }
-.netice{
+.result{
     font-size: 3rem;
     font-weight: 600;
 }
