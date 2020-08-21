@@ -3,10 +3,6 @@ var begin = document.querySelector('.begin');
 var quiz_div = document.querySelector('.quiz_div');
 var question_number = document.querySelector('.question_number');
 var question = document.querySelector('.question');
-var a = document.querySelector('.a');
-var b = document.querySelector('.b');
-var c = document.querySelector('.c');
-var d = document.querySelector('.d');
 var point_div = document.getElementById('point');
 var loading = document.querySelector('.load');
 var question_div = document.querySelector('.question_div');
@@ -44,30 +40,18 @@ function App() {
                 question.innerHTML = one.question;
                 var random10 = Math.random() * 10 + 1;
                 var random4 = Math.floor(random10 <= 4 ? random10 : random10 / 4);
-                if (a.id == random4) {
-                    a.innerHTML = one.correct_answer;
-                    b.innerHTML = one.incorrect_answers[0];
-                    c.innerHTML = one.incorrect_answers[1];
-                    d.innerHTML = one.incorrect_answers[2];
-                }
-                if (b.id == random4) {
-                    b.innerHTML = one.correct_answer;
-                    a.innerHTML = one.incorrect_answers[0];
-                    c.innerHTML = one.incorrect_answers[1];
-                    d.innerHTML = one.incorrect_answers[2];
-                }
-                if (c.id == random4) {
-                    c.innerHTML = one.correct_answer;
-                    a.innerHTML = one.incorrect_answers[0];
-                    b.innerHTML = one.incorrect_answers[1];
-                    d.innerHTML = one.incorrect_answers[2];
-                }
-                if (d.id == random4) {
-                    d.innerHTML = one.correct_answer;
-                    a.innerHTML = one.incorrect_answers[0];
-                    b.innerHTML = one.incorrect_answers[1];
-                    c.innerHTML = one.incorrect_answers[2];
-                }
+          
+                var options = document.querySelectorAll('.option');
+                options.forEach(option =>{
+                    if(Number(option.id)===random4){
+                        option.textContent = one.correct_answer;
+                    }
+                    else{
+                        for(i=0; i<=2; i++){
+                            option.textContent = one.incorrect_answers[i];
+                        }
+                    }
+                })
                 var options = document.querySelectorAll('.option');
                 options.forEach(option => {
                     option.style.backgroundColor = " rgb(255, 255, 236)";
@@ -77,8 +61,6 @@ function App() {
                 loading.style.display = "none"; 
         });
 };
-
-  
 
 
 // choose the answer
