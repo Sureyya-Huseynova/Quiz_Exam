@@ -18,12 +18,12 @@ var index = 1;
 var point = 0;
 var array_myanswer = [];
 // extra variant see
-checkbox.addEventListener("click", function () {
+checkbox.addEventListener("click",function(){
     ownanswer_div.style.display = "block";
 });
 // extra answer send array
-sendbtn.addEventListener("click", Show_ownanwser_div);
-function Show_ownanwser_div(){
+sendbtn.addEventListener("click", send_my_answer);
+function send_my_answer(){
     index++;
     App();
     array_myanswer.push(ownanswer.value);
@@ -95,7 +95,7 @@ options.forEach(option => {
             point -= 2;
         }
         if (ownanswer.value == "") {
-            array_myanswer.push("-----")
+            array_myanswer.push("----")
         }
         if (index <= 9) {
             index++;
@@ -107,7 +107,13 @@ options.forEach(option => {
                 var li = document.createElement('li');
                 li.innerHTML += `${array_myanswer[i]}`;
                 myanswerList.appendChild(li);
-                myAnswer_div.style.display = "block";
+                if(checkbox.checked==true){
+                    myAnswer_div.style.display = "block";
+            
+                }else{
+                    myAnswer_div.style.display = "none";
+            
+                }
             }
         }
     }
