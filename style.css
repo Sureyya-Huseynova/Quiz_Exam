@@ -77,6 +77,7 @@ html{
 }
 .option:hover{
     color: rgb(87, 60, 240);
+    background-color: aquamarine;
 }
 .variant{
     margin-right: 1rem;

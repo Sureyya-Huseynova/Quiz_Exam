@@ -37,13 +37,11 @@ function App() {
         .then(datas => {
            one = datas.results[index];       
                 question_number.innerHTML = index + " .";
-                question.innerHTML = one.question;
-                var random10 = Math.random() * 10 + 1;
-                var random4 = Math.floor(random10 <= 4 ? random10 : random10 / 4);
-          
+                question.innerHTML = one.question;   
+                var random =Math.floor( Math.random()*100%4);
                 var options = document.querySelectorAll('.option');
                 options.forEach(option =>{
-                    if(Number(option.id)===random4){
+                    if(Number(option.id)===random){
                         option.textContent = one.correct_answer;
                     }
                     else{
@@ -55,13 +53,13 @@ function App() {
                 var options = document.querySelectorAll('.option');
                 options.forEach(option => {
                     option.style.backgroundColor = " rgb(255, 255, 236)";
+                    getComputedStyle(option,':hove r');
                 });
                 question_div.style.display = "block";
                 All_Options_dives.style.display = "block";
                 loading.style.display = "none"; 
         });
 };
-
 
 // choose the answer
 var options = document.querySelectorAll('.option');
