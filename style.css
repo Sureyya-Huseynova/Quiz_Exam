@@ -43,8 +43,6 @@ html{
     position: relative;
     top:8rem;
     background-color: rgb(246, 248, 215);
-
-
 }
 .question_number{
     width: 7%;
@@ -62,6 +60,7 @@ html{
     margin: 2rem;
     cursor: pointer;
 }
+
 .All_Options_dives,.ques_num{
     margin-right: 1rem;
 }
@@ -73,12 +72,11 @@ html{
     border-radius: 3px;
     width: 60%;
     cursor: pointer;
-    border: rgb(127, 169, 204) 0.px solid;
     padding:0.4rem;
     padding-left: 1rem !important;
 }
 .option:hover{
-    background-color: rgb(217, 229, 238);
+    color: rgb(87, 60, 240);
 }
 .variant{
     margin-right: 1rem;
