@@ -7,18 +7,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <p class="text">Duzgun cavab bali 10 yalnish cavab bali -2 dir.
         Imtahani ugurla kecmeyiniz ucun 40 bal toplamalisiniz. <br>
         Imtahana ayrilmish vaxt 120 san
     </p>
+    <br>
 
+    <p class="text2">Xususi cavabini daxil etmek ucun asaqdaki button activ et </p> <br>
+    <input type="checkbox" class="checkbox">
     <div class="begin">Imtahana bashla</div>
     <div class="quiz_div">
         <img src="loading.gif" alt="loading" class="load">
 
-         <!-- show question-->
-        <div class="question_div"> 
+        <!-- show question-->
+        <div class="question_div">
             <div class="q">
                 <span class="question_number"></span>
                 <p class="question"> </p>
@@ -42,6 +46,11 @@
                 <span class="variant">D) </span>
                 <p class="option" id="3"></p>
             </div>
+            <div class="option_div" id="ownanswer_div">
+                <span class="variant">E) </span>
+                <textarea name="nswer" id="ownanswer" cols="50" rows="5" placeholder="Enter your answer"></textarea>
+                <a href="#" class="sendbtn">Send</a>
+            </div>
         </div>
     </div>
 
@@ -53,8 +62,16 @@
         <p class="result"></p>
     </div>
 
+    <!-- extra my answer-->
+    <div class="myAnswer_div">
+        <ol class="myanswerList">
+            <h2>My Answers</h2>
+        </ol>
+    </div>
+
 
 
     <script src="app.js"></script>
+
 </body>
 </html>

@@ -13,6 +13,10 @@ html{
 .text{
     font-size: 2rem;
 }
+.text2{
+    color: tomato;
+    font-size: 2rem;
+}
 .begin{
     border: 1px solid black;
     text-align: center;
@@ -31,11 +35,10 @@ html{
     width: 75%;
     margin: 5rem auto;
     padding: 3rem;
-    height: 35rem;
+    height: 45rem;
     display: none;
     background-color: rgb(246, 248, 215);
 }
-
 .load{
     display: block;
     width: 10%;
@@ -60,7 +63,6 @@ html{
     margin: 2rem;
     cursor: pointer;
 }
-
 .All_Options_dives,.ques_num{
     margin-right: 1rem;
 }
@@ -82,6 +84,33 @@ html{
 .variant{
     margin-right: 1rem;
 }
+/*  my answer textarea */
+#ownanswer_div{
+    display: none;
+}
+.sendbtn{
+text-decoration: none;
+background-color: tomato;
+padding: 0.5rem 1rem;
+color: white;
+border-radius: 7px;
+margin-left: 2%;
+font-size: 2rem;
+position: relative;
+top: 20%;
+}
+.sendbtn:hover{
+    background-color: rgb(209, 54, 27);
+}
+#ownanswer{
+    padding: 1rem;
+    font-size: 1.7rem;
+}
+#ownanswer:focus{
+    background-color: rgb(255, 255, 172);
+}
+
+/* result div */
 #point{
     width: 20%;
     text-align: center;
@@ -111,4 +140,25 @@ html{
 .result{
     font-size: 3rem;
     font-weight: 600;
+}
+
+/* my answer */
+.myAnswer_div{
+    margin: auto;
+    width: 50%;
+    height: 35rem;
+    background-color: rgb(196, 221, 221);
+    font-size: 20px;
+    padding: 3rem;
+    display: none;
+}
+.myanswerList{
+    width: 80%;
+    margin: auto;
+}
+h2{
+    margin-left: 30%;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 2rem;
 }
