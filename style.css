@@ -77,10 +77,7 @@ html{
     padding:0.4rem;
     padding-left: 1rem !important;
 }
-.option:hover{
-    color: rgb(87, 60, 240);
-    background-color: aquamarine;
-}
+
 .variant{
     margin-right: 1rem;
 }

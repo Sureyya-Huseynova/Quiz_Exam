@@ -28,7 +28,7 @@ function send_my_answer() {
     App();
     array_myanswer.push(ownanswer.value);
     ownanswer.value = "";
-    if(index==11){
+    if (index == 11) {
         ResultModule();
         for (i = 0; i < 10; i++) {
             var li = document.createElement('li');
@@ -36,8 +36,8 @@ function send_my_answer() {
             myanswerList.appendChild(li);
             if (checkbox.checked == true) {
                 myAnswer_div.style.display = "block";
-
-            } else {
+            }
+            else {
                 myAnswer_div.style.display = "none";
             }
         }
@@ -88,6 +88,12 @@ function App() {
             var options = document.querySelectorAll('.option');
             options.forEach(option => {
                 option.style.backgroundColor = " rgb(255, 255, 236)";
+                option.addEventListener('mouseover', function () {
+                    option.style.backgroundColor = "rgb(243, 247, 55)";
+                });
+                option.addEventListener('mouseleave', function () {
+                    option.style.backgroundColor = "rgb(255, 255, 236)";
+                });
             });
             question_div.style.display = "block";
             All_Options_dives.style.display = "block";
@@ -122,10 +128,8 @@ options.forEach(option => {
                 myanswerList.appendChild(li);
                 if (checkbox.checked == true) {
                     myAnswer_div.style.display = "block";
-
                 } else {
                     myAnswer_div.style.display = "none";
-
                 }
             }
         }
