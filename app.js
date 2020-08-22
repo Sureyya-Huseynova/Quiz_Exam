@@ -4,10 +4,6 @@ var begin = document.querySelector('.begin');
 var quiz_div = document.querySelector('.quiz_div');
 var question_number = document.querySelector('.question_number');
 var question = document.querySelector('.question');
-var a = document.querySelector('.a');
-var b = document.querySelector('.b');
-var c = document.querySelector('.c');
-var d = document.querySelector('.d');
 var point_div = document.getElementById('point');
 var loading = document.querySelector('.load');
 var question_div = document.querySelector('.question_div');
@@ -32,6 +28,20 @@ function send_my_answer() {
     App();
     array_myanswer.push(ownanswer.value);
     ownanswer.value = "";
+    if(index==11){
+        ResultModule();
+        for (i = 0; i < 10; i++) {
+            var li = document.createElement('li');
+            li.innerHTML += `${array_myanswer[i]}`;
+            myanswerList.appendChild(li);
+            if (checkbox.checked == true) {
+                myAnswer_div.style.display = "block";
+
+            } else {
+                myAnswer_div.style.display = "none";
+            }
+        }
+    }
 };
 
 // when you click begin button, you will see a question div
@@ -64,29 +74,16 @@ function App() {
             question_number.innerHTML = index + " .";
             question.innerHTML = one.question;
             var random = Math.floor(Math.random() * 100 % 4);
-            if (a.id == random) {
-                a.innerHTML = one.correct_answer;
-                b.innerHTML = one.incorrect_answers[0];
-                c.innerHTML = one.incorrect_answers[1];
-                d.innerHTML = one.incorrect_answers[2];
-            }
-            if (b.id == random) {
-                b.innerHTML = one.correct_answer;
-                a.innerHTML = one.incorrect_answers[0];
-                c.innerHTML = one.incorrect_answers[1];
-                d.innerHTML = one.incorrect_answers[2];
-            }
-            if (c.id == random) {
-                c.innerHTML = one.correct_answer;
-                b.innerHTML = one.incorrect_answers[0];
-                a.innerHTML = one.incorrect_answers[1];
-                d.innerHTML = one.incorrect_answers[2];
-            }
-            if (d.id == random) {
-                d.innerHTML = one.correct_answer;
-                b.innerHTML = one.incorrect_answers[0];
-                a.innerHTML = one.incorrect_answers[1];
-                c.innerHTML = one.incorrect_answers[2];
+            var options = document.querySelectorAll('.option');
+            var m = 0; // incorrect answer index 
+            for (var j = 0; j < options.length; j++) {
+                if (Number(options[j].id) === random) {
+                    options[j].innerHTML = one.correct_answer;
+                }
+                else {
+                    options[j].innerHTML = one.incorrect_answers[m];
+                    m++;
+                }
             }
             var options = document.querySelectorAll('.option');
             options.forEach(option => {
@@ -135,7 +132,6 @@ options.forEach(option => {
     }
 });
 
-
 // when the question or question time, you will see your result
 function ResultModule() {
     if (index = 4) {
@@ -158,8 +154,4 @@ document.querySelector('.close').addEventListener('click', function () {
     result_module.style.display = "none";
     myAnswer_div.style.display = "none";
 });
-
-
-
-
 
