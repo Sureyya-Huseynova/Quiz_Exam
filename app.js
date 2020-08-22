@@ -4,6 +4,10 @@ var begin = document.querySelector('.begin');
 var quiz_div = document.querySelector('.quiz_div');
 var question_number = document.querySelector('.question_number');
 var question = document.querySelector('.question');
+var a = document.querySelector('.a');
+var b = document.querySelector('.b');
+var c = document.querySelector('.c');
+var d = document.querySelector('.d');
 var point_div = document.getElementById('point');
 var loading = document.querySelector('.load');
 var question_div = document.querySelector('.question_div');
@@ -18,12 +22,12 @@ var index = 1;
 var point = 0;
 var array_myanswer = [];
 // extra variant see
-checkbox.addEventListener("click",function(){
+checkbox.addEventListener("click", function () {
     ownanswer_div.style.display = "block";
 });
 // extra answer send array
 sendbtn.addEventListener("click", send_my_answer);
-function send_my_answer(){
+function send_my_answer() {
     index++;
     App();
     array_myanswer.push(ownanswer.value);
@@ -43,7 +47,7 @@ function beginImtahan() {
     setTimeout(function () {
         quiz_div.style.display = 'none';
         ResultModule();
-    }, 120000);
+    }, 1200000);
 };
 
 // Take questions from the api and copy the correct answer in different variants each time
@@ -60,21 +64,33 @@ function App() {
             question_number.innerHTML = index + " .";
             question.innerHTML = one.question;
             var random = Math.floor(Math.random() * 100 % 4);
-            var options = document.querySelectorAll('.option');
-            options.forEach(option => {
-                if (Number(option.id) === random) {
-                    option.textContent = one.correct_answer;
-                }
-                else {
-                    for (i = 0; i <= 2; i++) {
-                        option.textContent = one.incorrect_answers[i];
-                    }
-                }
-            })
+            if (a.id == random) {
+                a.innerHTML = one.correct_answer;
+                b.innerHTML = one.incorrect_answers[0];
+                c.innerHTML = one.incorrect_answers[1];
+                d.innerHTML = one.incorrect_answers[2];
+            }
+            if (b.id == random) {
+                b.innerHTML = one.correct_answer;
+                a.innerHTML = one.incorrect_answers[0];
+                c.innerHTML = one.incorrect_answers[1];
+                d.innerHTML = one.incorrect_answers[2];
+            }
+            if (c.id == random) {
+                c.innerHTML = one.correct_answer;
+                b.innerHTML = one.incorrect_answers[0];
+                a.innerHTML = one.incorrect_answers[1];
+                d.innerHTML = one.incorrect_answers[2];
+            }
+            if (d.id == random) {
+                d.innerHTML = one.correct_answer;
+                b.innerHTML = one.incorrect_answers[0];
+                a.innerHTML = one.incorrect_answers[1];
+                c.innerHTML = one.incorrect_answers[2];
+            }
             var options = document.querySelectorAll('.option');
             options.forEach(option => {
                 option.style.backgroundColor = " rgb(255, 255, 236)";
-                getComputedStyle(option, ':hove r');
             });
             question_div.style.display = "block";
             All_Options_dives.style.display = "block";
@@ -107,12 +123,12 @@ options.forEach(option => {
                 var li = document.createElement('li');
                 li.innerHTML += `${array_myanswer[i]}`;
                 myanswerList.appendChild(li);
-                if(checkbox.checked==true){
+                if (checkbox.checked == true) {
                     myAnswer_div.style.display = "block";
-            
-                }else{
+
+                } else {
                     myAnswer_div.style.display = "none";
-            
+
                 }
             }
         }
@@ -128,7 +144,6 @@ function ResultModule() {
         result_module.style.display = 'block';
         result_module.style.marginBottom = "3rem";
         quiz_div.style.display = "none"
-        console.log(point);
         point_div.innerHTML = point;
         if (point > 40) {
             result.innerHTML = '<p>Kecdiniz</p>'
